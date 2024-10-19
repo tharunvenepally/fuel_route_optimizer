@@ -7,11 +7,13 @@ Steps I took: <br>
    Key takeaway were: <br>
       i) Assignment task
    
-   ![image](https://github.com/user-attachments/assets/e4569d31-5056-47a0-8e69-58b34083ab90)
+   ![image](https://github.com/user-attachments/assets/83a7e090-ecb7-441e-9bd3-d0f2b6cf796d)
+
    
       ii) Requirements
 
-   ![image](https://github.com/user-attachments/assets/6378df55-da54-4db9-bbd6-8f7724b989c6)
+   ![image](https://github.com/user-attachments/assets/56c6c2cc-d6d1-4b9a-85d0-49a5ebc1ca63)
+
 
 2. To meet the task requirement, I identified a free maps route API from MAPQUEST. <br>
     Which has several API request quotas of 15,000 requests, which was enough for this project.<br>
@@ -466,14 +468,15 @@ b) Second API which was of interest: Geocoding API <br>
    - Realized for me to calculate the most optimal routes and fueling points on the route I needed to work with latitudes and longitudes <br>
    - The problem was that the Excel sheet had no lat and lng rows: fuel-prices-for-be-assessment.csv <br>
    
-     ![image](https://github.com/user-attachments/assets/45c8e2dc-1d0d-4f5a-b904-34f270839996)
+     ![image](https://github.com/user-attachments/assets/0ee2f589-9440-4fe5-a90a-e216c69f4ffc)
+
 
   - I decided to build a small API worker in Nodejs to query the MAPQUEST API geocoding API with the address row on the Excel sheet<br>
     and fill in the missing latitudes and latitudes this would increase the Django server API speed and performance when querying the geocoding API each time  
     the user wanted to get fuel-efficient stations in terms of cost. Also, this assisted me in ensuring that my Django API would only do one API call to      
     accomplish this task. 
 
-    ![image](https://github.com/user-attachments/assets/c71267a7-ca52-4d03-bac7-10e17d519752)
+   ![image](https://github.com/user-attachments/assets/3230f1df-36a1-4227-97fc-59e7734530c6)
 
     and here is the code:
 
@@ -572,9 +575,10 @@ b) Second API which was of interest: Geocoding API <br>
       ```
     The results:<br>
 
-      ![image](https://github.com/user-attachments/assets/3e770cdc-7732-42d9-8797-7cdce991b067)
+      ![image](https://github.com/user-attachments/assets/a9d695e6-d106-4126-8d40-a62ad8bd08b7)
 
-      ![image](https://github.com/user-attachments/assets/a9d132a0-dca4-42cd-85ef-c47fe1271f96)
+     ![image](https://github.com/user-attachments/assets/2f815c4d-b9bc-4bf5-a5bc-095ec8329c77)
+
       
     
 5. The next step, I proceeded by setting up the Django project using Django:3.2.23: I created the fuel_route_optimizer project <br> and implemented the routing_api app. <br>
@@ -582,34 +586,36 @@ b) Second API which was of interest: Geocoding API <br>
 
 6. Then, I installed the Django Rest Framework (DRF) for API endpoints and implemented my first API endpoint to test if it was successful: <br>
 
-     ![image](https://github.com/user-attachments/assets/ac939b4f-7918-4529-925e-366b0fd5d394)
+    ![image](https://github.com/user-attachments/assets/711944e9-d6dc-4f45-9320-20d1e8b55a1e)
 
 7. Then I proceeded to integrate the MapQuest API for Route Calculation:
 
-     ![image](https://github.com/user-attachments/assets/8eacc874-14a1-4808-ae8d-9336c591fbcc)
+     ![image](https://github.com/user-attachments/assets/20a59b37-9ca6-4bbf-b0aa-855b10098d1e)
 
-     ![image](https://github.com/user-attachments/assets/f255bb6c-a695-418b-8911-62f370306ab9)
+
+    ![image](https://github.com/user-attachments/assets/fc2685b1-6063-41f0-9ffc-3bd8e6411ba6)
 
    
-9. After that I implemented a module to check if the dataset was being loaded correctly:<br>
+8. After that I implemented a module to check if the dataset was being loaded correctly:<br>
 
     - Tested by displaying the first five data rows:<br>
 
-    ![image](https://github.com/user-attachments/assets/a2860117-c8dd-490c-b327-4390f37f6fc1)
+    ![image](https://github.com/user-attachments/assets/2a089e1e-49ca-4465-99c0-430c7f667388)
 
-11. Then I implemented the main API endpoint to integrate the two modules: Route and Fuel Data;
+
+9. Then I implemented the main API endpoint to integrate the two modules: Route and Fuel Data;
 
     ![image](https://github.com/user-attachments/assets/bc0f14ad-c602-4bdf-b1bf-f3d95401db24)
 
-12. After implementing the final test, I had to optimize the API requests so I intergreatd<br> 
+10. After implementing the final test, I had to optimize the API requests so I intergreatd<br> 
      cache to help me store the requests to avoid repeating the same request that I had br>    
     already made: Here are the results: <br>
 
-    ![image](https://github.com/user-attachments/assets/f3ac1f91-9dfd-4f39-9acc-eb2a04b70494)
+    ![image](https://github.com/user-attachments/assets/0d98769b-6618-4c4d-a577-6c294175d3fb)
 
     My final project structure:
 
-    ![image](https://github.com/user-attachments/assets/4e86c618-50f2-4e4a-8272-5b9a94416c54)
+   ![image](https://github.com/user-attachments/assets/810d6ecd-d131-4e47-815b-5727ead96f05)
 
     An example of final API call results: <br>
 
