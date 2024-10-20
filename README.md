@@ -575,9 +575,9 @@ b) Second API which was of interest: Geocoding API <br>
       ```
     The results:<br>
 
-      ![image](https://github.com/user-attachments/assets/a9d695e6-d106-4126-8d40-a62ad8bd08b7)
+   ![image](https://github.com/user-attachments/assets/a9d695e6-d106-4126-8d40-a62ad8bd08b7)
 
-     ![image](https://github.com/user-attachments/assets/2f815c4d-b9bc-4bf5-a5bc-095ec8329c77)
+ ![image](https://github.com/user-attachments/assets/2f815c4d-b9bc-4bf5-a5bc-095ec8329c77)
 
       
     
